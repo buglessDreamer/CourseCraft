@@ -7,7 +7,7 @@ export default function MyCourses() {
   const defaultImage = "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800";
 
   useEffect(() => {
-    axios.get("http://localhost:3000/users/purchasedCourses", {
+    axios.get("https://coursecraft-c630.onrender.com/users/purchasedCourses", {
       headers: { token: localStorage.getItem("token") }
     })
     .then(res => setPurchases(res.data.purchases || []))

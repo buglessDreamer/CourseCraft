@@ -12,7 +12,7 @@ const courseRouter = require("./routes/courseRoutes");
 
 app.use(
   cors({
-    origin: "http://localhost:5173", 
+    origin: "https://course-craft-seven-gray.vercel.app/", 
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "token"], 
   })

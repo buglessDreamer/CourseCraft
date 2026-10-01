@@ -10,7 +10,7 @@ export default function UserDashboard() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/courses")
+      .get("https://coursecraft-c630.onrender.com/courses")
       .then((res) => {
         setCourses(res.data.courses || []);
       })
@@ -23,7 +23,7 @@ export default function UserDashboard() {
 
     try {
       const res = await axios.post(
-        `http://localhost:3000/courses/purchase/${courseId}`,
+        `https://coursecraft-c630.onrender.com/courses/purchase/${courseId}`,
         {},
         {
           headers: { token },

@@ -12,7 +12,7 @@ export default function Signup() {
   const handleSignup = async () => {
     try {
       const endpoint = role === "admin" ? "admin/signup" : "users/signup";
-      await axios.post(`http://localhost:3000/${endpoint}`, formData);
+      await axios.post(`https://coursecraft-c630.onrender.com/${endpoint}`, formData);
       alert("Account created successfully!");
       navigate("/login");
     } catch (e) {

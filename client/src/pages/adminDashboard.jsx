@@ -15,7 +15,7 @@ export default function AdminDashboard() {
 
   const fetchCourses = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/admin/courses", {
+      const res = await axios.get("https://coursecraft-c630.onrender.com/admin/courses", {
         headers: { token: localStorage.getItem("token") }
       });
       setCourses(res.data.courses || []);
