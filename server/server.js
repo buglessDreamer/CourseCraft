@@ -10,13 +10,22 @@ const userRouter = require("./routes/userRoutes");
 const adminRouter = require("./routes/adminRoutes");
 const courseRouter = require("./routes/courseRoutes");
 
-// app.use(
-//   cors({
-//     origin: "https://course-craft-seven-gray.vercel.app", 
-//     methods: ["GET", "POST", "PUT", "DELETE"],
-//     allowedHeaders: ["Content-Type", "token"], 
-//   })
-// );
+const allowedOrigins = [
+  "https://course-craft-seven-gray.vercel.app",
+  "http://localhost:5173",
+];
+
+const corsOptions = {
+  origin: (origin, cb) => {
+    if (!origin || allowedOrigins.includes(origin)) return cb(null, true);
+    cb(new Error("Not allowed by CORS"));
+  },
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "token"],
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions)); // explicitly answer preflight requests
 
 app.use(express.json());
 
