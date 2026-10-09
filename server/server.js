@@ -10,13 +10,13 @@ const userRouter = require("./routes/userRoutes");
 const adminRouter = require("./routes/adminRoutes");
 const courseRouter = require("./routes/courseRoutes");
 
-app.use(
-  cors({
-    origin: "https://course-craft-seven-gray.vercel.app", 
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "token"], 
-  })
-);
+// app.use(
+//   cors({
+//     origin: "https://course-craft-seven-gray.vercel.app", 
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     allowedHeaders: ["Content-Type", "token"], 
+//   })
+// );
 
 app.use(express.json());
 
